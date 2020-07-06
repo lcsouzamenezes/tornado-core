@@ -4,7 +4,7 @@ Tornado Cash is a non-custodial Ethereum and ERC20 privacy solution based on zkS
 
 To make a deposit user generates a secret and sends its hash (called a commitment) along with the deposit amount to the Tornado smart contract. The contract accepts the deposit and adds the commitment to its list of deposits.
 
-Later, the user decides to make a withdrawal. In order to do that, the user should provide a proof that he or she possesses a secret to an unspent commitment from the smart contract’s list of deposits. zkSnark technology allows that to happen without revealing which exact deposit corresponds to this secret. The smart contract will check the proof, and transfer deposited funds to the address specified for withdrawal. An external observer will be unable to determine which deposit this withdrawal came from.
+Later, the user decides to make a withdrawal. In order to do that, the user should provide a proof that he or she possesses a secret to an unspent commitment from the smart contractâ€™s list of deposits. zkSnark technology allows that to happen without revealing which exact deposit corresponds to this secret. The smart contract will check the proof, and transfer deposited funds to the address specified for withdrawal. An external observer will be unable to determine which deposit this withdrawal came from.
 
 You can read more about it in [this medium article](https://medium.com/@tornado.cash/introducing-private-transactions-on-ethereum-now-42ee915babe0)
 
@@ -46,14 +46,14 @@ You can see example usage in cli.js, it works both in console and in browser.
 1. `npx ganache-cli`
 1. `npm run test` - optionally runs tests. It may fail on the first try, just run it again.
 
-Use browser version on Kovan:
+Use browser version on Ropsten:
 
-1. `vi .env` - add your Kovan private key to deploy contracts
+1. `vi .env` - add your Ropsten private key to deploy contracts
 1. `npm run migrate`
 1. `npx http-server` - serve current dir, you can use any other static http server
 1. Open `localhost:8080`
 
-Use with command line version. Works for Ganache, Kovan and Mainnet:
+Use with command line version. Works for Ganache, Ropsten and Mainnet:
 ### Initialization
 1. `cp .env.example .env`
 1. `npm run download`
@@ -66,14 +66,14 @@ Use with command line version. Works for Ganache, Kovan and Mainnet:
 1. `./cli.js test`
 1. `./cli.js --help`
 
-### Kovan, Mainnet
+### Ropsten, Mainnet
 1. make sure you complete steps from Initialization
 1. Add `PRIVATE_KEY` to `.env` file
 1. `./cli.js --help`
 
 Example:
 ```bash
-./cli.js deposit ETH 0.1 --rpc https://kovan.infura.io/v3/27a9649f826b4e31a83e07ae09a87448
+./cli.js deposit ETH 0.1 --rpc https://ropsten.infura.io/v3/49fe846ca07b441380b5387c158404e2
 ```
 > Your note: tornado-eth-0.1-42-0xf73dd6833ccbcc046c44228c8e2aa312bf49e08389dadc7c65e6a73239867b7ef49c705c4db227e2fadd8489a494b6880bdcb6016047e019d1abec1c7652
 > Tornado ETH balance is 8.9
@@ -83,7 +83,7 @@ Example:
 > Sender account ETH balance is 1004873.361652048361352542
 
 ```bash
-./cli.js withdraw tornado-eth-0.1-42-0xf73dd6833ccbcc046c44228c8e2aa312bf49e08389dadc7c65e6a73239867b7ef49c705c4db227e2fadd8489a494b6880bdcb6016047e019d1abec1c7652 0x8589427373D6D84E98730D7795D8f6f8731FDA16 --rpc https://kovan.infura.io/v3/27a9649f826b4e31a83e07ae09a87448 --relayer https://kovan-frelay.duckdns.org
+./cli.js withdraw tornado-eth-0.1-42-0xf73dd6833ccbcc046c44228c8e2aa312bf49e08389dadc7c65e6a73239867b7ef49c705c4db227e2fadd8489a494b6880bdcb6016047e019d1abec1c7652 0x8589427373D6D84E98730D7795D8f6f8731FDA16 --rpc https://ropsten.infura.io/v3/27a9649f826b4e31a83e07ae09a87448 --relayer https://ropsten-frelay.duckdns.org
 ```
 
 > Relay address:  0x6A31736e7490AbE5D5676be059DFf064AB4aC754
@@ -91,20 +91,20 @@ Example:
 > Generating SNARK proof
 > Proof time: 9117.051ms
 > Sending withdraw transaction through relay
-> Transaction submitted through the relay. View transaction on etherscan https://kovan.etherscan.io/tx/0xcb21ae8cad723818c6bc7273e83e00c8393fcdbe74802ce5d562acad691a2a7b
+> Transaction submitted through the relay. View transaction on etherscan https://ropsten.etherscan.io/tx/0xcb21ae8cad723818c6bc7273e83e00c8393fcdbe74802ce5d562acad691a2a7b
 > Transaction mined in block 17036120
 > Done
 
 ## Deploy ETH Tornado Cash
 1. `cp .env.example .env`
 1. Tune all necessary params
-1. `npx truffle migrate --network kovan --reset --f 2 --to 4`
+1. `npx truffle migrate --network ropsten --reset --f 2 --to 4`
 
 ## Deploy ERC20 Tornado Cash
 1. `cp .env.example .env`
 1. Tune all necessary params
-1. `npx truffle migrate --network kovan --reset --f 2 --to 3`
-1. `npx truffle migrate --network kovan --reset --f 5`
+1. `npx truffle migrate --network ropsten --reset --f 2 --to 3`
+1. `npx truffle migrate --network ropsten --reset --f 5`
 
 **Note**. If you want to reuse the same verifier for all the instances, then after you deployed one of the instances you should only run 4th or 5th migration for ETH or ERC20 contracts respectively (`--f 4 --to 4` or `--f 5`).
 
