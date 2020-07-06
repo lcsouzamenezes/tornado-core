@@ -1,7 +1,7 @@
 # Tornado Cash for tBTC
 This is a fork of the original [tornado-core](https://github.com/tornadocash/tornado-core) repository that has been modified for deployment on Ropsten for the tBTC token.
 ## Setup
-The build folder is included in the repository for easy deployment. If you want to build yourself, the detailed instructions are given [below](usage).
+The build folder is included in the repository for easy deployment. If you want to build yourself, the detailed instructions are given [below](#usage).
 
  1. Edit .env file and set the ERC20_TOKEN address for the tBTC contract and the PRIVATE_KEY for deploying the tornado contract to ropsten.
  2. Set TOKEN_AMOUNT in wei
