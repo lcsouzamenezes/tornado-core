@@ -11,10 +11,10 @@ const { toWei } = require('web3-utils')
 
 let web3, contract, netId, circuit, proving_key, groth16
 const MERKLE_TREE_HEIGHT = 20
-const RPC_URL = 'https://kovan.infura.io/v3/0279e3bdf3ee49d0b547c643c2ef78ef'
-const PRIVATE_KEY = 'ad5b6eb7ee88173fa43dedcff8b1d9024d03f6307a1143ecf04bea8ed40f283f' // 0x94462e71A887756704f0fb1c0905264d487972fE
-const CONTRACT_ADDRESS = '0xD6a6AC46d02253c938B96D12BE439F570227aE8E'
-const AMOUNT = '1'
+const RPC_URL = 'https://ropsten.infura.io/v3/49fe846ca07b441380b5387c158404e2'
+const PRIVATE_KEY = '6650327BEA72BB590FC49518445CBAE5B1131A5ABBAE3A6296E0043057A86F88' // 0x94462e71A887756704f0fb1c0905264d487972fE
+const CONTRACT_ADDRESS = '0x05cB9967dFBC158302BDcb11d5469b58d4c8065B'
+const AMOUNT = '0.1'
 // CURRENCY = 'ETH'
 
 /** Generate random number of specified byte length */
@@ -44,7 +44,7 @@ async function deposit() {
   const deposit = createDeposit(rbigint(31), rbigint(31))
   console.log('Sending deposit transaction...')
   const tx = await contract.methods.deposit(toHex(deposit.commitment)).send({ value: toWei(AMOUNT), from: web3.eth.defaultAccount, gas:2e6 })
-  console.log(`https://kovan.etherscan.io/tx/${tx.transactionHash}`)
+  console.log(`https://ropsten.etherscan.io/tx/${tx.transactionHash}`)
   return `tornado-eth-${AMOUNT}-${netId}-${toHex(deposit.preimage, 62)}`
 }
 
@@ -58,7 +58,7 @@ async function withdraw(note, recipient) {
   const { proof, args } = await generateSnarkProof(deposit, recipient)
   console.log('Sending withdrawal transaction...')
   const tx = await contract.methods.withdraw(proof, ...args).send({ from: web3.eth.defaultAccount, gas: 1e6 })
-  console.log(`https://kovan.etherscan.io/tx/${tx.transactionHash}`)
+  console.log(`https://ropsten.etherscan.io/tx/${tx.transactionHash}`)
 }
 
 /**

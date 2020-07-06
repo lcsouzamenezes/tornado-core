@@ -69,6 +69,18 @@ module.exports = {
         decimals: 6
       }
     },
+    netId3: {
+      tBTC: {
+        instanceAddress: {
+          '0.001': '0xF5626f5D256c8EBE4582CE2f278eD5aDC7F3b7F1',
+          '0.01': '0x842263194D40c942e9dDb901bF7d8D43917F79Fc',
+          '0.1': '0x05cB9967dFBC158302BDcb11d5469b58d4c8065B'
+        },
+        tokenAddress: '0x70914770f2063e9968F7d1baB5bFF95ED47191f9',
+        symbol: 'tBTC',
+        decimals: 18
+      }
+    },
     netId42: {
       eth: {
         instanceAddress: {

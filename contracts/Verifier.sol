@@ -1,1 +1,1 @@
-../build/circuits/Verifier.sol
+import '../build/circuits/Verifier.sol';

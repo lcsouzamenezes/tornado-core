@@ -322,7 +322,7 @@ contract('ERC20Tornado', accounts => {
       // USDT decimals is 6, so TOKEN_AMOUNT=1000000
       // and sent `tokenDenomination` to accounts[0] (0x90F8bf6A479f320ead074411a4B0e7944Ea8c9C1)
       // run ganache as
-      // ganache-cli --fork https://kovan.infura.io/v3/27a9649f826b4e31a83e07ae09a87448@13147586  -d --keepAliveTimeout 20
+      // ganache-cli --fork https://ropsten.infura.io/v3/49fe846ca07b441380b5387c158404e2  -d --keepAliveTimeout 20
       const deposit = generateDeposit()
       const user = accounts[4]
       const userBal = await usdtToken.balanceOf(user)
@@ -413,7 +413,7 @@ contract('ERC20Tornado', accounts => {
       // dont forget to specify your token in .env
       // and send `tokenDenomination` to accounts[0] (0x90F8bf6A479f320ead074411a4B0e7944Ea8c9C1)
       // run ganache as
-      // npx ganache-cli --fork https://kovan.infura.io/v3/27a9649f826b4e31a83e07ae09a87448@13146218 -d --keepAliveTimeout 20
+      // npx ganache-cli --fork https://ropsten.infura.io/v3/49fe846ca07b441380b5387c158404e2 -d --keepAliveTimeout 20
       const deposit = generateDeposit()
       const user = accounts[4]
       const userBal = await token.balanceOf(user)

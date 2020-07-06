@@ -338,6 +338,8 @@ function getCurrentNetworkName() {
   switch (netId) {
   case 1:
     return ''
+  case 3:
+      return 'ropsten.'
   case 42:
     return 'kovan.'
   }
