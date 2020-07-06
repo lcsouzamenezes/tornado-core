@@ -1,0 +1,346 @@
+{
+  "contractName": "BadRecipient",
+  "abi": [
+    {
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "fallback"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"fallback\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/c/Users/kaikr_000/Desktop/upwork/portfolio/tornado-core/contracts/Mocks/BadRecipient.sol\":\"BadRecipient\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/c/Users/kaikr_000/Desktop/upwork/portfolio/tornado-core/contracts/Mocks/BadRecipient.sol\":{\"keccak256\":\"0x9634d51ef3ee82b6ebd7a064c16a1e520b928140812129ce37c381def7ee7aef\",\"urls\":[\"bzz-raw://26eeb5b4baf5be1efc14ebf2f2b59a4021bfacf0ae305b4f85e64398d2888f77\",\"dweb:/ipfs/QmcPme2TFse1MYnHSC8SKxExppHw3b9k4X2ZmVkt4iQzMu\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50609c80601d6000396000f3fe6080604052348015600f57600080fd5b5060405162461bcd60e51b815260040180806020018281038252602181526020018060476021913960400191505060405180910390fdfe7468697320636f6e747261637420646f6573206e6f742061636365707420455448a265627a7a72315820f0ed6e7d44d308f651be2918ebbe33cbb50e842755f05f42dcfad336e9da5ad564736f6c63430005110032",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b5060405162461bcd60e51b815260040180806020018281038252602181526020018060476021913960400191505060405180910390fdfe7468697320636f6e747261637420646f6573206e6f742061636365707420455448a265627a7a72315820f0ed6e7d44d308f651be2918ebbe33cbb50e842755f05f42dcfad336e9da5ad564736f6c63430005110032",
+  "sourceMap": "27:114:5:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;27:114:5;;;;;;;",
+  "deployedSourceMap": "27:114:5:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;81:51:5;;-1:-1:-1;;;81:51:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
+  "source": "pragma solidity ^0.5.0;\r\n\r\ncontract BadRecipient {\r\n  function() external {\r\n    require(false, \"this contract does not accept ETH\");\r\n  }\r\n}\r\n",
+  "sourcePath": "c:/Users/kaikr_000/Desktop/upwork/portfolio/tornado-core/contracts/Mocks/BadRecipient.sol",
+  "ast": {
+    "absolutePath": "/c/Users/kaikr_000/Desktop/upwork/portfolio/tornado-core/contracts/Mocks/BadRecipient.sol",
+    "exportedSymbols": {
+      "BadRecipient": [
+        1822
+      ]
+    },
+    "id": 1823,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1812,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:5"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1822,
+        "linearizedBaseContracts": [
+          1822
+        ],
+        "name": "BadRecipient",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1820,
+              "nodeType": "Block",
+              "src": "74:64:5",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "66616c7365",
+                        "id": 1816,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "bool",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "89:5:5",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "value": "false"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "7468697320636f6e747261637420646f6573206e6f742061636365707420455448",
+                        "id": 1817,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "96:35:5",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_a3dfa67cd4d104a688bb8ad9f6858d9a8fecb15cbae3a5d0cd6923d5d60a93c8",
+                          "typeString": "literal_string \"this contract does not accept ETH\""
+                        },
+                        "value": "this contract does not accept ETH"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_a3dfa67cd4d104a688bb8ad9f6858d9a8fecb15cbae3a5d0cd6923d5d60a93c8",
+                          "typeString": "literal_string \"this contract does not accept ETH\""
+                        }
+                      ],
+                      "id": 1815,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        3267,
+                        3268
+                      ],
+                      "referencedDeclaration": 3268,
+                      "src": "81:7:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 1818,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "81:51:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1819,
+                  "nodeType": "ExpressionStatement",
+                  "src": "81:51:5"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1821,
+            "implemented": true,
+            "kind": "fallback",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1813,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "62:2:5"
+            },
+            "returnParameters": {
+              "id": 1814,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "74:0:5"
+            },
+            "scope": 1822,
+            "src": "54:84:5",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1823,
+        "src": "27:114:5"
+      }
+    ],
+    "src": "0:143:5"
+  },
+  "legacyAST": {
+    "absolutePath": "/c/Users/kaikr_000/Desktop/upwork/portfolio/tornado-core/contracts/Mocks/BadRecipient.sol",
+    "exportedSymbols": {
+      "BadRecipient": [
+        1822
+      ]
+    },
+    "id": 1823,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1812,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:5"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1822,
+        "linearizedBaseContracts": [
+          1822
+        ],
+        "name": "BadRecipient",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1820,
+              "nodeType": "Block",
+              "src": "74:64:5",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "66616c7365",
+                        "id": 1816,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "bool",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "89:5:5",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "value": "false"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "7468697320636f6e747261637420646f6573206e6f742061636365707420455448",
+                        "id": 1817,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "96:35:5",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_a3dfa67cd4d104a688bb8ad9f6858d9a8fecb15cbae3a5d0cd6923d5d60a93c8",
+                          "typeString": "literal_string \"this contract does not accept ETH\""
+                        },
+                        "value": "this contract does not accept ETH"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_a3dfa67cd4d104a688bb8ad9f6858d9a8fecb15cbae3a5d0cd6923d5d60a93c8",
+                          "typeString": "literal_string \"this contract does not accept ETH\""
+                        }
+                      ],
+                      "id": 1815,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        3267,
+                        3268
+                      ],
+                      "referencedDeclaration": 3268,
+                      "src": "81:7:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 1818,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "81:51:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1819,
+                  "nodeType": "ExpressionStatement",
+                  "src": "81:51:5"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1821,
+            "implemented": true,
+            "kind": "fallback",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1813,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "62:2:5"
+            },
+            "returnParameters": {
+              "id": 1814,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "74:0:5"
+            },
+            "scope": 1822,
+            "src": "54:84:5",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1823,
+        "src": "27:114:5"
+      }
+    ],
+    "src": "0:143:5"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.17+commit.d19bba13.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.18",
+  "updatedAt": "2020-07-05T10:01:45.774Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

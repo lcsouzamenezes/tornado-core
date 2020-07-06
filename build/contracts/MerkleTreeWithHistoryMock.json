@@ -1,0 +1,837 @@
+{
+  "contractName": "MerkleTreeWithHistoryMock",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint32",
+          "name": "_treeLevels",
+          "type": "uint32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "FIELD_SIZE",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "ROOT_HISTORY_SIZE",
+      "outputs": [
+        {
+          "internalType": "uint32",
+          "name": "",
+          "type": "uint32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "ZERO_VALUE",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "currentRootIndex",
+      "outputs": [
+        {
+          "internalType": "uint32",
+          "name": "",
+          "type": "uint32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "filledSubtrees",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getLastRoot",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_left",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "_right",
+          "type": "bytes32"
+        }
+      ],
+      "name": "hashLeftRight",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_root",
+          "type": "bytes32"
+        }
+      ],
+      "name": "isKnownRoot",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "levels",
+      "outputs": [
+        {
+          "internalType": "uint32",
+          "name": "",
+          "type": "uint32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "nextIndex",
+      "outputs": [
+        {
+          "internalType": "uint32",
+          "name": "",
+          "type": "uint32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "roots",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "zeros",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_leaf",
+          "type": "bytes32"
+        }
+      ],
+      "name": "insert",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint32\",\"name\":\"_treeLevels\",\"type\":\"uint32\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":true,\"inputs\":[],\"name\":\"FIELD_SIZE\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"ROOT_HISTORY_SIZE\",\"outputs\":[{\"internalType\":\"uint32\",\"name\":\"\",\"type\":\"uint32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"ZERO_VALUE\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"currentRootIndex\",\"outputs\":[{\"internalType\":\"uint32\",\"name\":\"\",\"type\":\"uint32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"filledSubtrees\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getLastRoot\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_left\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"_right\",\"type\":\"bytes32\"}],\"name\":\"hashLeftRight\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_leaf\",\"type\":\"bytes32\"}],\"name\":\"insert\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_root\",\"type\":\"bytes32\"}],\"name\":\"isKnownRoot\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"levels\",\"outputs\":[{\"internalType\":\"uint32\",\"name\":\"\",\"type\":\"uint32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"nextIndex\",\"outputs\":[{\"internalType\":\"uint32\",\"name\":\"\",\"type\":\"uint32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"roots\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"zeros\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"getLastRoot()\":{\"details\":\"Returns the last root\"},\"hashLeftRight(bytes32,bytes32)\":{\"details\":\"Hash 2 tree leaves, returns MiMC(_left, _right)\"},\"isKnownRoot(bytes32)\":{\"details\":\"Whether the root is present in the root history\"}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/c/Users/kaikr_000/Desktop/upwork/portfolio/tornado-core/contracts/Mocks/MerkleTreeWithHistoryMock.sol\":\"MerkleTreeWithHistoryMock\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/c/Users/kaikr_000/Desktop/upwork/portfolio/tornado-core/contracts/MerkleTreeWithHistory.sol\":{\"keccak256\":\"0xe14de55e6a0a10e7f8d52587414ed992994b60a3ec94580dcd803089a402561f\",\"urls\":[\"bzz-raw://930e68d67f5a2d60745ae8ca9277a0987ff10ab02810aeaeadafa0287993521d\",\"dweb:/ipfs/QmU2iqNvDxEAUGRm6ksAaXJe3zfkY9C9vf4yRME28mGvh7\"]},\"/c/Users/kaikr_000/Desktop/upwork/portfolio/tornado-core/contracts/Mocks/MerkleTreeWithHistoryMock.sol\":{\"keccak256\":\"0x2e18b694a00abd17dd935f31f87efa7b16e4501c964c2dff94f52e96081d9f78\",\"urls\":[\"bzz-raw://4a2d3ea0eb140ddde82f9221caa96d573ed2ff6f6c6c91e43a2457c0acf4c263\",\"dweb:/ipfs/Qma1KezGbvevk772hfyuDJxAn4ZXS8NaMfc8SataiZGjqK\"]}},\"version\":1}",
+  "bytecode": "0x6080604052600380546001600160401b031916905534801561002057600080fd5b50604051610bf4380380610bf48339818101604052602081101561004357600080fd5b50518063ffffffff81166100885760405162461bcd60e51b8152600401808060200182810382526027815260200180610b6b6027913960400191505060405180910390fd5b60208163ffffffff16106100cd5760405162461bcd60e51b8152600401808060200182810382526022815260200180610bb26022913960400191505060405180910390fd5b6000805463ffffffff191663ffffffff83161781556002805460018181019092557f2fe54c60d3acabf3343a35b6eba15db4821b340f76e741e2249685ed4899af6c600080516020610b2a8339815191529091018190558154808301835592829052600080516020610bd48339815191529092018290555b60005463ffffffff90811690821610156101b35761016c82806001600160e01b036101d316565b600280546001818101909255600080516020610b2a83398151915201829055805480820182556000829052600080516020610bd48339815191520182905590925001610145565b506101c781806001600160e01b036101d316565b600455506103b4915050565b6000600080516020610b928339815191528310610237576040805162461bcd60e51b815260206004820181905260248201527f5f6c6566742073686f756c6420626520696e7369646520746865206669656c64604482015290519081900360640190fd5b600080516020610b9283398151915282106102835760405162461bcd60e51b8152600401808060200182810382526021815260200180610b4a6021913960400191505060405180910390fd5b6040805163f47d33b560e01b81526004810185905260006024820181905282518693919273__Hasher________________________________9263f47d33b592604480840193829003018186803b1580156102dd57600080fd5b505af41580156102f1573d6000803e3d6000fd5b505050506040513d604081101561030757600080fd5b5080516020909101519092509050600080516020610b92833981519152848308915073__Hasher________________________________63f47d33b583836040518363ffffffff1660e01b81526004018083815260200182815260200192505050604080518083038186803b15801561037f57600080fd5b505af4158015610393573d6000803e3d6000fd5b505050506040513d60408110156103a957600080fd5b505195945050505050565b610767806103c36000396000f3fe608060405234801561001057600080fd5b50600436106100cf5760003560e01c8063ba70f7571161008c578063e829558811610066578063e8295588146101b7578063ec732959146101d4578063f178e47c146101dc578063fc7e9c6f146101f9576100cf565b8063ba70f7571461018a578063c2b40ae414610192578063cd87a3b4146101af576100cf565b80632d287e43146100d457806338bf282e146100f3578063414a37ba146101285780634ecf518b146101305780636d9833e31461015157806390eeb02b14610182575b600080fd5b6100f1600480360360208110156100ea57600080fd5b5035610201565b005b6101166004803603604081101561010957600080fd5b508035906020013561020e565b60408051918252519081900360200190f35b6101166103ef565b610138610401565b6040805163ffffffff9092168252519081900360200190f35b61016e6004803603602081101561016757600080fd5b503561040d565b604080519115158252519081900360200190f35b610138610480565b61011661048c565b610116600480360360208110156101a857600080fd5b50356104ac565b6101386104c0565b610116600480360360208110156101cd57600080fd5b50356104c5565b6101166104e3565b610116600480360360208110156101f257600080fd5b5035610507565b610138610514565b61020a81610528565b5050565b60006000805160206107138339815191528310610272576040805162461bcd60e51b815260206004820181905260248201527f5f6c6566742073686f756c6420626520696e7369646520746865206669656c64604482015290519081900360640190fd5b60008051602061071383398151915282106102be5760405162461bcd60e51b81526004018080602001828103825260218152602001806106f26021913960400191505060405180910390fd5b6040805163f47d33b560e01b81526004810185905260006024820181905282518693919273__Hasher________________________________9263f47d33b592604480840193829003018186803b15801561031857600080fd5b505af415801561032c573d6000803e3d6000fd5b505050506040513d604081101561034257600080fd5b5080516020909101519092509050600080516020610713833981519152848308915073__Hasher________________________________63f47d33b583836040518363ffffffff1660e01b81526004018083815260200182815260200192505050604080518083038186803b1580156103ba57600080fd5b505af41580156103ce573d6000803e3d6000fd5b505050506040513d60408110156103e457600080fd5b505195945050505050565b60008051602061071383398151915281565b60005463ffffffff1681565b60008161041c5750600061047b565b60035463ffffffff165b60048163ffffffff166064811061043957fe5b015483141561044c57600191505061047b565b63ffffffff811661045b575060645b6003546000199091019063ffffffff808316911614156104265760009150505b919050565b60035463ffffffff1681565b60035460009060049063ffffffff16606481106104a557fe5b0154905090565b600481606481106104b957fe5b0154905081565b606481565b600281815481106104d257fe5b600091825260209091200154905081565b7f2fe54c60d3acabf3343a35b6eba15db4821b340f76e741e2249685ed4899af6c81565b600181815481106104d257fe5b600354640100000000900463ffffffff1681565b60035460008054909163ffffffff640100000000909104811691811660020a168114156105865760405162461bcd60e51b815260040180806020018281038252602f8152602001806106c3602f913960400191505060405180910390fd5b6003805463ffffffff64010000000080830482166001019091160267ffffffff000000001990911617905582600080805b60005463ffffffff908116908216101561065f576001851661061b5783925060028163ffffffff16815481106105e957fe5b906000526020600020015491508360018263ffffffff168154811061060a57fe5b60009182526020909120015561063f565b60018163ffffffff168154811061062e57fe5b906000526020600020015492508391505b610649838361020e565b9350600263ffffffff86160494506001016105b7565b5060035460649063ffffffff908116600101166003805463ffffffff19169290910663ffffffff9081169290921790819055849160049116606481106106a157fe5b01555050600354640100000000900463ffffffff166000190194935050505056fe4d65726b6c6520747265652069732066756c6c2e204e6f206d6f7265206c656166732063616e2062652061646465645f72696768742073686f756c6420626520696e7369646520746865206669656c6430644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001a265627a7a723158206f5d06499c20ca8bad081554e920fefe9f22157504cb6ccbcc2da20a303034e264736f6c63430005110032405787fa12a823e0f2b7631cc41b3ba8828b3321ca811111fa75cd3aa3bb5ace5f72696768742073686f756c6420626520696e7369646520746865206669656c645f747265654c6576656c732073686f756c642062652067726561746572207468616e207a65726f30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f00000015f747265654c6576656c732073686f756c64206265206c657373207468616e203332b10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf6",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100cf5760003560e01c8063ba70f7571161008c578063e829558811610066578063e8295588146101b7578063ec732959146101d4578063f178e47c146101dc578063fc7e9c6f146101f9576100cf565b8063ba70f7571461018a578063c2b40ae414610192578063cd87a3b4146101af576100cf565b80632d287e43146100d457806338bf282e146100f3578063414a37ba146101285780634ecf518b146101305780636d9833e31461015157806390eeb02b14610182575b600080fd5b6100f1600480360360208110156100ea57600080fd5b5035610201565b005b6101166004803603604081101561010957600080fd5b508035906020013561020e565b60408051918252519081900360200190f35b6101166103ef565b610138610401565b6040805163ffffffff9092168252519081900360200190f35b61016e6004803603602081101561016757600080fd5b503561040d565b604080519115158252519081900360200190f35b610138610480565b61011661048c565b610116600480360360208110156101a857600080fd5b50356104ac565b6101386104c0565b610116600480360360208110156101cd57600080fd5b50356104c5565b6101166104e3565b610116600480360360208110156101f257600080fd5b5035610507565b610138610514565b61020a81610528565b5050565b60006000805160206107138339815191528310610272576040805162461bcd60e51b815260206004820181905260248201527f5f6c6566742073686f756c6420626520696e7369646520746865206669656c64604482015290519081900360640190fd5b60008051602061071383398151915282106102be5760405162461bcd60e51b81526004018080602001828103825260218152602001806106f26021913960400191505060405180910390fd5b6040805163f47d33b560e01b81526004810185905260006024820181905282518693919273__Hasher________________________________9263f47d33b592604480840193829003018186803b15801561031857600080fd5b505af415801561032c573d6000803e3d6000fd5b505050506040513d604081101561034257600080fd5b5080516020909101519092509050600080516020610713833981519152848308915073__Hasher________________________________63f47d33b583836040518363ffffffff1660e01b81526004018083815260200182815260200192505050604080518083038186803b1580156103ba57600080fd5b505af41580156103ce573d6000803e3d6000fd5b505050506040513d60408110156103e457600080fd5b505195945050505050565b60008051602061071383398151915281565b60005463ffffffff1681565b60008161041c5750600061047b565b60035463ffffffff165b60048163ffffffff166064811061043957fe5b015483141561044c57600191505061047b565b63ffffffff811661045b575060645b6003546000199091019063ffffffff808316911614156104265760009150505b919050565b60035463ffffffff1681565b60035460009060049063ffffffff16606481106104a557fe5b0154905090565b600481606481106104b957fe5b0154905081565b606481565b600281815481106104d257fe5b600091825260209091200154905081565b7f2fe54c60d3acabf3343a35b6eba15db4821b340f76e741e2249685ed4899af6c81565b600181815481106104d257fe5b600354640100000000900463ffffffff1681565b60035460008054909163ffffffff640100000000909104811691811660020a168114156105865760405162461bcd60e51b815260040180806020018281038252602f8152602001806106c3602f913960400191505060405180910390fd5b6003805463ffffffff64010000000080830482166001019091160267ffffffff000000001990911617905582600080805b60005463ffffffff908116908216101561065f576001851661061b5783925060028163ffffffff16815481106105e957fe5b906000526020600020015491508360018263ffffffff168154811061060a57fe5b60009182526020909120015561063f565b60018163ffffffff168154811061062e57fe5b906000526020600020015492508391505b610649838361020e565b9350600263ffffffff86160494506001016105b7565b5060035460649063ffffffff908116600101166003805463ffffffff19169290910663ffffffff9081169290921790819055849160049116606481106106a157fe5b01555050600354640100000000900463ffffffff166000190194935050505056fe4d65726b6c6520747265652069732066756c6c2e204e6f206d6f7265206c656166732063616e2062652061646465645f72696768742073686f756c6420626520696e7369646520746865206669656c6430644e72e131a029b85045b68181585d2833e84879b9709143e1f593f0000001a265627a7a723158206f5d06499c20ca8bad081554e920fefe9f22157504cb6ccbcc2da20a303034e264736f6c63430005110032",
+  "sourceMap": "69:220:8:-;;;1457:34:3;;;-1:-1:-1;;;;;;1496:27:3;;;136:77:8;5:2:-1;;;;30:1;27;20:12;5:2;136:77:8;;;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;136:77:8;;1679:15:3;;;1671:67;;;;-1:-1:-1;;;1671:67:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1767:2;1753:11;:16;;;1745:63;;;;-1:-1:-1;;;1745:63:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1815:6;:20;;-1:-1:-1;;1815:20:3;;;;;;;1892:5;27:10:-1;;-1:-1;23:18;;;45:23;;;1107:77:3;-1:-1:-1;;;;;;;;;;;1892:23:3;;;;;;27:10:-1;;23:18;;;45:23;;1922:32:3;;;;-1:-1:-1;;;;;;;;;;;1922:32:3;;;;;;1963:179;1986:6;;;;;;1982:10;;;;1963:179;;;2022:39;2036:11;;-1:-1:-1;;;;;2022:13:3;:39;:::i;:::-;2070:5;27:10:-1;;39:1;23:18;;;45:23;;;-1:-1;;;;;;;;;;;2070:23:3;;;;27:10:-1;;23:18;;;45:23;;-1:-1;2102:32:3;;;-1:-1:-1;;;;;;;;;;;2102:32:3;;;;2008:53;;-1:-1:-1;1994:3:3;1963:179;;;-1:-1:-1;2161:39:3;2175:11;;-1:-1:-1;;;;;2161:13:3;:39;:::i;:::-;2150:5;:50;-1:-1:-1;69:220:8;;-1:-1:-1;;69:220:8;2283:454:3;2358:7;-1:-1:-1;;;;;;;;;;;2382:27:3;;2374:72;;;;;-1:-1:-1;;;2374:72:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;;;;;;;2461:28:3;;2453:74;;;;-1:-1:-1;;;2453:74:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2596:23;;;-1:-1:-1;;;2596:23:3;;;;;;;;2534:9;2596:23;;;;;;;;2554:5;;2534:9;;2596:6;;:17;;:23;;;;;;;;;;:6;:23;;;5:2:-1;;;;30:1;27;20:12;5:2;2596:23:3;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;2596:23:3;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;2596:23:3;;;;;;;;;-1:-1:-1;2596:23:3;-1:-1:-1;;;;;;;;;;;;2648:6:3;2637:1;2630:38;2626:42;;2684:6;:17;2702:1;2705;2684:23;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2684:23:3;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;2684:23:3;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;2684:23:3;;2283:454;-1:-1:-1;;;;;2283:454:3:o;69:220:8:-;;;;;;;",
+  "deployedSourceMap": "69:220:8:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;69:220:8;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;219:67;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;219:67:8;;:::i;:::-;;2283:454:3;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;2283:454:3;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;951:114;;;:::i;1230:20::-;;;:::i;:::-;;;;;;;;;;;;;;;;;;;3649:357;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;3649:357:3;;:::i;:::-;;;;;;;;;;;;;;;;;;1457:34;;;:::i;4057:95::-;;;:::i;1579:39::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1579:39:3;;:::i;1528:46::-;;;:::i;1430:22::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1430:22:3;;:::i;1070:114::-;;;:::i;1394:31::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1394:31:3;;:::i;1496:27::-;;;:::i;219:67:8:-;266:14;274:5;266:7;:14::i;:::-;;219:67;:::o;2283:454:3:-;2358:7;-1:-1:-1;;;;;;;;;;;2382:27:3;;2374:72;;;;;-1:-1:-1;;;2374:72:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;;;;;;;2461:28:3;;2453:74;;;;-1:-1:-1;;;2453:74:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2596:23;;;-1:-1:-1;;;2596:23:3;;;;;;;;2534:9;2596:23;;;;;;;;2554:5;;2534:9;;2596:6;;:17;;:23;;;;;;;;;;:6;:23;;;5:2:-1;;;;30:1;27;20:12;5:2;2596:23:3;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;2596:23:3;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;2596:23:3;;;;;;;;;-1:-1:-1;2596:23:3;-1:-1:-1;;;;;;;;;;;;2648:6:3;2637:1;2630:38;2626:42;;2684:6;:17;2702:1;2705;2684:23;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2684:23:3;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;2684:23:3;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;2684:23:3;;2283:454;-1:-1:-1;;;;;2283:454:3:o;951:114::-;-1:-1:-1;;;;;;;;;;;951:114:3;:::o;1230:20::-;;;;;;:::o;3649:357::-;3705:4;3722:10;3718:45;;-1:-1:-1;3750:5:3;3743:12;;3718:45;3780:16;;;;3803:179;3828:5;3834:1;3828:8;;;;;;;;;;;3819:5;:17;3815:55;;;3856:4;3849:11;;;;;3815:55;3882:6;;;3878:54;;-1:-1:-1;1571:3:3;3878:54;3964:16;;-1:-1:-1;;3940:3:3;;;;3964:16;3959:21;;;3964:16;;3959:21;;3803:179;;3995:5;3988:12;;;3649:357;;;;:::o;1457:34::-;;;;;;:::o;4057:95::-;4129:16;;4100:7;;4123:5;;4129:16;;4123:23;;;;;;;;;4116:30;;4057:95;:::o;1579:39::-;;;;;;;;;;;;;-1:-1:-1;1579:39:3;:::o;1528:46::-;1571:3;1528:46;:::o;1430:22::-;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;1430:22:3;:::o;1070:114::-;1107:77;1070:114;:::o;1394:31::-;;;;;;;;;;1496:27;;;;;;;;;:::o;2743:829::-;2835:9;;2792:12;2886:6;;2792:12;;2835:9;;;;;;;;2886:6;;2882:1;2875:17;2859:33;;;;2851:93;;;;-1:-1:-1;;;2851:93:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2951:9;:14;;;;;;;;;2964:1;2951:14;;;;;-1:-1:-1;;2951:14:3;;;;;;2999:5;-1:-1:-1;;;3052:369:3;3075:6;;;;;;3071:10;;;;3052:369;;;3101:16;;;3097:233;;3142:16;3135:23;;3177:5;3183:1;3177:8;;;;;;;;;;;;;;;;;;3169:16;;3218;3198:14;3213:1;3198:17;;;;;;;;;;;;;;;;;;;:36;3097:233;;;3268:14;3283:1;3268:17;;;;;;;;;;;;;;;;;;3261:24;;3304:16;3296:24;;3097:233;3359:26;3373:4;3379:5;3359:13;:26::i;:::-;3340:45;-1:-1:-1;3412:1:3;3396:17;;;;;-1:-1:-1;3083:3:3;;3052:369;;;-1:-1:-1;3449:16:3;;1571:3;;3448:42;3449:16;;;;:20;3448:42;3429:16;:61;;-1:-1:-1;;3429:61:3;3448:42;;;;3429:61;;;;;;;;;;;;3523:16;;3497:5;;3503:16;3497:23;;;;;;;;:42;-1:-1:-1;;3553:9:3;;;;;;;-1:-1:-1;;3553:13:3;;2743:829;-1:-1:-1;;;;2743:829:3:o",
+  "source": "pragma solidity 0.5.17;\r\n\r\nimport '../MerkleTreeWithHistory.sol';\r\n\r\ncontract MerkleTreeWithHistoryMock is MerkleTreeWithHistory {\r\n\r\n  constructor (uint32 _treeLevels) MerkleTreeWithHistory(_treeLevels) public {}\r\n\r\n  function insert(bytes32 _leaf) public {\r\n      _insert(_leaf);\r\n  }\r\n}\r\n",
+  "sourcePath": "c:/Users/kaikr_000/Desktop/upwork/portfolio/tornado-core/contracts/Mocks/MerkleTreeWithHistoryMock.sol",
+  "ast": {
+    "absolutePath": "/c/Users/kaikr_000/Desktop/upwork/portfolio/tornado-core/contracts/Mocks/MerkleTreeWithHistoryMock.sol",
+    "exportedSymbols": {
+      "MerkleTreeWithHistoryMock": [
+        1934
+      ]
+    },
+    "id": 1935,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1911,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:8"
+      },
+      {
+        "absolutePath": "/c/Users/kaikr_000/Desktop/upwork/portfolio/tornado-core/contracts/MerkleTreeWithHistory.sol",
+        "file": "../MerkleTreeWithHistory.sol",
+        "id": 1912,
+        "nodeType": "ImportDirective",
+        "scope": 1935,
+        "sourceUnit": 1754,
+        "src": "27:38:8",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1913,
+              "name": "MerkleTreeWithHistory",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1753,
+              "src": "107:21:8",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_MerkleTreeWithHistory_$1753",
+                "typeString": "contract MerkleTreeWithHistory"
+              }
+            },
+            "id": 1914,
+            "nodeType": "InheritanceSpecifier",
+            "src": "107:21:8"
+          }
+        ],
+        "contractDependencies": [
+          1753
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1934,
+        "linearizedBaseContracts": [
+          1934,
+          1753
+        ],
+        "name": "MerkleTreeWithHistoryMock",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1922,
+              "nodeType": "Block",
+              "src": "211:2:8",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 1923,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "id": 1919,
+                    "name": "_treeLevels",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 1916,
+                    "src": "191:11:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  }
+                ],
+                "id": 1920,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 1918,
+                  "name": "MerkleTreeWithHistory",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1753,
+                  "src": "169:21:8",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_type$_t_contract$_MerkleTreeWithHistory_$1753_$",
+                    "typeString": "type(contract MerkleTreeWithHistory)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "169:34:8"
+              }
+            ],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1917,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1916,
+                  "name": "_treeLevels",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1923,
+                  "src": "149:18:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 1915,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "149:6:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "148:20:8"
+            },
+            "returnParameters": {
+              "id": 1921,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "211:0:8"
+            },
+            "scope": 1934,
+            "src": "136:77:8",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1932,
+              "nodeType": "Block",
+              "src": "257:29:8",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1929,
+                        "name": "_leaf",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1925,
+                        "src": "274:5:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "id": 1928,
+                      "name": "_insert",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1695,
+                      "src": "266:7:8",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_bytes32_$returns$_t_uint32_$",
+                        "typeString": "function (bytes32) returns (uint32)"
+                      }
+                    },
+                    "id": 1930,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "266:14:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "id": 1931,
+                  "nodeType": "ExpressionStatement",
+                  "src": "266:14:8"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1933,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "insert",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1926,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1925,
+                  "name": "_leaf",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1933,
+                  "src": "235:13:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 1924,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "235:7:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "234:15:8"
+            },
+            "returnParameters": {
+              "id": 1927,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "257:0:8"
+            },
+            "scope": 1934,
+            "src": "219:67:8",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 1935,
+        "src": "69:220:8"
+      }
+    ],
+    "src": "0:291:8"
+  },
+  "legacyAST": {
+    "absolutePath": "/c/Users/kaikr_000/Desktop/upwork/portfolio/tornado-core/contracts/Mocks/MerkleTreeWithHistoryMock.sol",
+    "exportedSymbols": {
+      "MerkleTreeWithHistoryMock": [
+        1934
+      ]
+    },
+    "id": 1935,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1911,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:8"
+      },
+      {
+        "absolutePath": "/c/Users/kaikr_000/Desktop/upwork/portfolio/tornado-core/contracts/MerkleTreeWithHistory.sol",
+        "file": "../MerkleTreeWithHistory.sol",
+        "id": 1912,
+        "nodeType": "ImportDirective",
+        "scope": 1935,
+        "sourceUnit": 1754,
+        "src": "27:38:8",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1913,
+              "name": "MerkleTreeWithHistory",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1753,
+              "src": "107:21:8",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_MerkleTreeWithHistory_$1753",
+                "typeString": "contract MerkleTreeWithHistory"
+              }
+            },
+            "id": 1914,
+            "nodeType": "InheritanceSpecifier",
+            "src": "107:21:8"
+          }
+        ],
+        "contractDependencies": [
+          1753
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1934,
+        "linearizedBaseContracts": [
+          1934,
+          1753
+        ],
+        "name": "MerkleTreeWithHistoryMock",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 1922,
+              "nodeType": "Block",
+              "src": "211:2:8",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 1923,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "id": 1919,
+                    "name": "_treeLevels",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 1916,
+                    "src": "191:11:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  }
+                ],
+                "id": 1920,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 1918,
+                  "name": "MerkleTreeWithHistory",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 1753,
+                  "src": "169:21:8",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_type$_t_contract$_MerkleTreeWithHistory_$1753_$",
+                    "typeString": "type(contract MerkleTreeWithHistory)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "169:34:8"
+              }
+            ],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1917,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1916,
+                  "name": "_treeLevels",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1923,
+                  "src": "149:18:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 1915,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "149:6:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "148:20:8"
+            },
+            "returnParameters": {
+              "id": 1921,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "211:0:8"
+            },
+            "scope": 1934,
+            "src": "136:77:8",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1932,
+              "nodeType": "Block",
+              "src": "257:29:8",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1929,
+                        "name": "_leaf",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1925,
+                        "src": "274:5:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "id": 1928,
+                      "name": "_insert",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1695,
+                      "src": "266:7:8",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_bytes32_$returns$_t_uint32_$",
+                        "typeString": "function (bytes32) returns (uint32)"
+                      }
+                    },
+                    "id": 1930,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "266:14:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "id": 1931,
+                  "nodeType": "ExpressionStatement",
+                  "src": "266:14:8"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1933,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "insert",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1926,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1925,
+                  "name": "_leaf",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1933,
+                  "src": "235:13:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 1924,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "235:7:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "234:15:8"
+            },
+            "returnParameters": {
+              "id": 1927,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "257:0:8"
+            },
+            "scope": 1934,
+            "src": "219:67:8",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 1935,
+        "src": "69:220:8"
+      }
+    ],
+    "src": "0:291:8"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.17+commit.d19bba13.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.18",
+  "updatedAt": "2020-07-05T10:01:45.806Z",
+  "devdoc": {
+    "methods": {
+      "getLastRoot()": {
+        "details": "Returns the last root"
+      },
+      "hashLeftRight(bytes32,bytes32)": {
+        "details": "Hash 2 tree leaves, returns MiMC(_left, _right)"
+      },
+      "isKnownRoot(bytes32)": {
+        "details": "Whether the root is present in the root history"
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
